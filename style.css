@@ -1,0 +1,17 @@
+body { background: black; color: white; font: 35px Helvetica, sans-serif; text-align: center; padding-top: 150px; }
+h1 { font-size: 60px; }
+form { margin-bottom: 50px; }
+input { font-size: 20px; text-align: center; }
+button {
+    display: block;
+    clear: both;
+    margin: 25px auto;
+    font-size: 18px;
+    border: 2px solid white;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+}
+button:hover { border-color: green; }
