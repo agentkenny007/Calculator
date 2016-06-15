@@ -22,11 +22,11 @@ var x, y, operation, operationComplete = false,
         operation = op; // passes the operation to be performed to the global operation variable
         if (operationComplete) operationComplete = false; // any executed operation is reinitilialised
         // if the screen is not at zero and there is not an operation currently being performed
-        if (data != '0' && !data.includes('+') && !data.includes('-') && !data.includes('*') && !data.includes('/')){
+        if (data != '0' && !data.includes('+') && !data.includes(' - ') && !data.includes('*') && !data.includes('/')){
             x = Number(data); // determines the number on the screen (represented as a string) and coerces it to behave as a number (integer or floating point)
             $('#window').innerHTML += str; // adds the operation character (+,-,*, or /) to the end of the number on the screen
         // otherwise, if there is already an operation currently being performed
-        } else if (data.includes('+') || data.includes('-') || data.includes('*') || data.includes('/'))
+        } else if (data.includes('+') || data.includes(' - ') || data.includes('*') || data.includes('/'))
             $('#window').innerHTML = data.replace(/\s.\s/, str); // replace the current operation represented on the screen with the operation to be performed
     },
     float = function(){ // adds a decimal to the end of the number on the screen
@@ -36,7 +36,10 @@ var x, y, operation, operationComplete = false,
             else if (!data.includes('.')) display('.'); // otherwise, add a decimal to the number on the screen, if one has not already been added
         } else { // if the first number has been operated upon
             var lastNumber = data.substr(data.lastIndexOf(' ')); // collect the second number (a string) in a local variable
-            if (!lastNumber.includes('.')) display('.'); // if a decimal has not already been added to the second number, add a decimal to the second number
+            if (!lastNumber.includes('.')){ // if a decimal has not already been added to the second number
+                if (lastNumber == ' ') display('0.'); // and the second number has yet to be add to the screen, place a zero before the decimal
+                else display('.'); // otherwise, add a decimal to the second number
+            }
         }
     },
     equate = function(op){ // determines the answer to the equation on the screen based on it's operation
