@@ -4,6 +4,6 @@ This repo contains two working HTML/CSS calculators. One is simple and only does
 
 Based off of the image 'calculator.gif' in this repo.
 
-[Simple calculator](http://agentkenny.github.io/Calculator)
+[Simple calculator](http://agentkenny007.github.io/Calculator)
 
-[Styled calculator](http://agentkenny.github.io/Calculator/calculator)
+[Styled calculator](http://agentkenny007.github.io/Calculator/calculator)
